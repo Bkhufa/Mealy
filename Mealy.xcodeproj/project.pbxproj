@@ -14,6 +14,7 @@
 		E3851EEF2AFD0F0B00893C13 /* MealyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3851EEE2AFD0F0B00893C13 /* MealyTests.swift */; };
 		E3851EF92AFD0F0B00893C13 /* MealyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3851EF82AFD0F0B00893C13 /* MealyUITests.swift */; };
 		E3851EFB2AFD0F0B00893C13 /* MealyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3851EFA2AFD0F0B00893C13 /* MealyUITestsLaunchTests.swift */; };
+		E3851F0C2AFD119300893C13 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3851F0B2AFD119300893C13 /* AuthView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		E3851EF42AFD0F0B00893C13 /* MealyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MealyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3851EF82AFD0F0B00893C13 /* MealyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealyUITests.swift; sourceTree = "<group>"; };
 		E3851EFA2AFD0F0B00893C13 /* MealyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealyUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		E3851F0B2AFD119300893C13 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,10 +96,10 @@
 		E3851EDC2AFD0F0900893C13 /* Mealy */ = {
 			isa = PBXGroup;
 			children = (
+				E3851F082AFD116500893C13 /* Authentication */,
 				E3851EDD2AFD0F0900893C13 /* MealyApp.swift */,
 				E3851EDF2AFD0F0900893C13 /* ContentView.swift */,
-				E3851EE12AFD0F0B00893C13 /* Assets.xcassets */,
-				E3851EE32AFD0F0B00893C13 /* Preview Content */,
+				E3851F072AFD114F00893C13 /* SupportingFiles */,
 			);
 			path = Mealy;
 			sourceTree = "<group>";
@@ -125,6 +127,23 @@
 				E3851EFA2AFD0F0B00893C13 /* MealyUITestsLaunchTests.swift */,
 			);
 			path = MealyUITests;
+			sourceTree = "<group>";
+		};
+		E3851F072AFD114F00893C13 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				E3851EE12AFD0F0B00893C13 /* Assets.xcassets */,
+				E3851EE32AFD0F0B00893C13 /* Preview Content */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		E3851F082AFD116500893C13 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				E3851F0B2AFD119300893C13 /* AuthView.swift */,
+			);
+			path = Authentication;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,6 +276,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3851F0C2AFD119300893C13 /* AuthView.swift in Sources */,
 				E3851EE02AFD0F0900893C13 /* ContentView.swift in Sources */,
 				E3851EDE2AFD0F0900893C13 /* MealyApp.swift in Sources */,
 			);
@@ -416,7 +436,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Mealy/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Mealy/SupportingFiles/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -444,7 +464,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Mealy/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Mealy/SupportingFiles/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
