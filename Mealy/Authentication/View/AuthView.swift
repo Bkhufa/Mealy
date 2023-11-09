@@ -46,6 +46,6 @@ struct AuthView<ViewModel>: View where ViewModel: AuthViewModel {
 
 struct AuthView_Previews: PreviewProvider {
     static var previews: some View {
-        AuthView(viewModel: LoginAuthViewModel(useCase: DefaultAuthUseCase(storage: KeyChainLocalStorage())))
+        AuthView(viewModel: LoginViewModel(useCase: DefaultAuthUseCase(storage: KeyChainLocalStorage())))
     }
 }

@@ -11,7 +11,7 @@ import SwiftUI
 struct MealyApp: App {
     var body: some Scene {
         WindowGroup {
-            AuthView(viewModel: LoginAuthViewModel(useCase: DefaultAuthUseCase(storage: KeyChainLocalStorage())))
+            AuthView(viewModel: LoginViewModel(useCase: DefaultAuthUseCase(storage: KeyChainLocalStorage())))
         }
     }
 }
