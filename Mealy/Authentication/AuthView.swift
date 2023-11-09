@@ -7,21 +7,19 @@
 
 import SwiftUI
 
-struct AuthView: View {
+struct AuthView<ViewModel>: View where ViewModel: AuthViewModel {
     
-    @State var userName: String = ""
-    @State var passWord: String = ""
-    let screenName: String
+    @ObservedObject var viewModel: ViewModel
     
     var body: some View {
         VStack(spacing: 10) {
-            Text(screenName)
+            Text(viewModel.screenTitle)
                 .font(.largeTitle)
                 .fontWeight(.heavy)
                 .padding(.bottom, 10)
             Group {
-                TextField("Username", text: $userName)
-                TextField("Password", text: $passWord)
+                TextField("Username", text: $viewModel.userName)
+                TextField("Password", text: $viewModel.password)
             }
             .padding(20)
             .background(
@@ -32,9 +30,9 @@ struct AuthView: View {
             .padding(.vertical, 5)
             
             Button {
-                
+                viewModel.onSubmitButtonTapped()
             } label: {
-                Text(screenName)
+                Text(viewModel.screenTitle)
                     .frame(maxWidth: .infinity)
                     .padding()
                     .background(Color.blue)
@@ -46,8 +44,8 @@ struct AuthView: View {
     }
 }
 
-struct LoginView_Previews: PreviewProvider {
+struct AuthView_Previews: PreviewProvider {
     static var previews: some View {
-        AuthView(screenName: "Register")
+        AuthView(viewModel: LoginAuthViewModel())
     }
 }

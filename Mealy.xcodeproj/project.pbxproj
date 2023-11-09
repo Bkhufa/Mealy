@@ -15,6 +15,7 @@
 		E3851EF92AFD0F0B00893C13 /* MealyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3851EF82AFD0F0B00893C13 /* MealyUITests.swift */; };
 		E3851EFB2AFD0F0B00893C13 /* MealyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3851EFA2AFD0F0B00893C13 /* MealyUITestsLaunchTests.swift */; };
 		E3851F0C2AFD119300893C13 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3851F0B2AFD119300893C13 /* AuthView.swift */; };
+		E3851F0E2AFD175D00893C13 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3851F0D2AFD175D00893C13 /* AuthViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +47,7 @@
 		E3851EF82AFD0F0B00893C13 /* MealyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealyUITests.swift; sourceTree = "<group>"; };
 		E3851EFA2AFD0F0B00893C13 /* MealyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealyUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		E3851F0B2AFD119300893C13 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
+		E3851F0D2AFD175D00893C13 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				E3851F0B2AFD119300893C13 /* AuthView.swift */,
+				E3851F0D2AFD175D00893C13 /* AuthViewModel.swift */,
 			);
 			path = Authentication;
 			sourceTree = "<group>";
@@ -276,6 +279,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3851F0E2AFD175D00893C13 /* AuthViewModel.swift in Sources */,
 				E3851F0C2AFD119300893C13 /* AuthView.swift in Sources */,
 				E3851EE02AFD0F0900893C13 /* ContentView.swift in Sources */,
 				E3851EDE2AFD0F0900893C13 /* MealyApp.swift in Sources */,
