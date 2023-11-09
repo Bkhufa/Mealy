@@ -20,10 +20,37 @@ final class LoginAuthViewModel: AuthViewModel {
     @Published var userName: String = ""
     @Published var password: String = ""
     
+    private let useCase: AuthUseCase
+    
     var screenTitle: String {
         "Login"
     }
     
+    init(useCase: AuthUseCase) {
+        self.useCase = useCase
+    }
+    
     func onSubmitButtonTapped() {
+        useCase.login(userName: userName, password: password)
+    }
+}
+
+final class RegisterAuthViewModel: AuthViewModel {
+    
+    @Published var userName: String = ""
+    @Published var password: String = ""
+    
+    private let useCase: AuthUseCase
+    
+    var screenTitle: String {
+        "Register"
+    }
+    
+    init(useCase: AuthUseCase) {
+        self.useCase = useCase
+    }
+    
+    func onSubmitButtonTapped() {
+        useCase.register(userName: userName, password: password)
     }
 }
