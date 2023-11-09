@@ -9,10 +9,65 @@ import Foundation
 
 protocol AuthViewModel: ObservableObject {
     var screenTitle: String { get }
+    var toggleButtonLabel: String { get }
+    
     var userName: String { get set }
     var password: String { get set }
     
     func onSubmitButtonTapped()
+    func toggleAuthType()
 }
 
+enum AuthType: String {
+    case login
+    case register
+    
+    var toggleButtonLabel: String {
+        switch self {
+        case .login:
+            return "Didn't have an account yet? Register now!"
+        case .register:
+            return "Already have an account? Login here!"
+        }
+    }
+}
+
+final class DefaultAuthViewModel: AuthViewModel {
+    
+    @Published var userName: String = ""
+    @Published var password: String = ""
+    @Published var authType: AuthType
+    
+    private let useCase: AuthUseCase
+    
+    var screenTitle: String {
+        authType.rawValue.capitalized
+    }
+    
+    var toggleButtonLabel: String {
+        authType.toggleButtonLabel
+    }
+    
+    init(authType: AuthType, useCase: AuthUseCase) {
+        self.useCase = useCase
+        self.authType = authType
+    }
+    
+    func onSubmitButtonTapped() {
+        switch authType {
+        case .login:
+            useCase.login(userName: userName, password: password)
+        case .register:
+            useCase.register(userName: userName, password: password)
+        }
+    }
+    
+    func toggleAuthType() {
+        if case .login = authType {
+            authType = .register
+            return
+        }
+        authType = .login
+    }
+}
 

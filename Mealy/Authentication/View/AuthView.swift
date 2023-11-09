@@ -40,12 +40,18 @@ struct AuthView<ViewModel>: View where ViewModel: AuthViewModel {
                     .clipShape(RoundedRectangle(cornerRadius: 50))
             }
             .padding()
+            
+            Button {
+                viewModel.toggleAuthType()
+            } label: {
+                Text(viewModel.toggleButtonLabel)
+            }
         }
     }
 }
 
 struct AuthView_Previews: PreviewProvider {
     static var previews: some View {
-        AuthView(viewModel: LoginViewModel(useCase: DefaultAuthUseCase(storage: KeyChainLocalStorage())))
+        AuthView(viewModel: DefaultAuthViewModel(authType: .register, useCase: DefaultAuthUseCase(storage: KeyChainLocalStorage())))
     }
 }
