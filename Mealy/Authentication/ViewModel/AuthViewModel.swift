@@ -54,11 +54,17 @@ final class DefaultAuthViewModel: AuthViewModel {
     }
     
     func onSubmitButtonTapped() {
-        switch authType {
-        case .login:
-            useCase.login(userName: userName, password: password)
-        case .register:
-            useCase.register(userName: userName, password: password)
+        do {
+            switch authType {
+            case .login:
+                let credential = try useCase.login(userName: userName, password: password)
+                try useCase.saveCredential(credential)
+            case .register:
+                try useCase.register(userName: userName, password: password)
+            }
+        } catch {
+            //TODO: Handle Error
+            print(error)
         }
     }
     

@@ -8,13 +8,18 @@
 import Foundation
 
 protocol LocalStorage {
-    associatedtype T: LocalModel
-    func writeToLocalStorage(_ content: T)
-    func readFromLocalStorage(_ content: T) -> T?
+    func writeToLocalStorage<T: LocalModel>(_ content: T) throws
+    func readFromLocalStorage<T: LocalModel>(_ content: T) throws -> T?
 }
 
 protocol LocalModel {
     func mapToWriteKeychain() -> CFDictionary
     func mapToReadKeychain() -> CFDictionary
     func mapFromKeychain(model: CFTypeRef?) -> Self?
+}
+
+enum LocalStorageError: Error {
+    case failedToWrite
+    case failedToRead
+    case failedToUpdate
 }
