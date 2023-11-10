@@ -16,6 +16,8 @@
 		E309126D2AFE9A6400019437 /* MealListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E309126C2AFE9A6400019437 /* MealListViewModel.swift */; };
 		E309126F2AFE9A7900019437 /* MealListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E309126E2AFE9A7900019437 /* MealListView.swift */; };
 		E30912722AFEA63C00019437 /* PanZoomImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E30912712AFEA63C00019437 /* PanZoomImage.swift */; };
+		E30912762AFEBA7000019437 /* MealDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E30912752AFEBA7000019437 /* MealDetailView.swift */; };
+		E30912782AFEBAE900019437 /* MealImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E30912772AFEBAE900019437 /* MealImage.swift */; };
 		E34653D32AFD289600C4AC3C /* KeychainLocalStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34653D22AFD289600C4AC3C /* KeychainLocalStorage.swift */; };
 		E34653DF2AFDB84400C4AC3C /* String+Base64.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34653DE2AFDB84400C4AC3C /* String+Base64.swift */; };
 		E34653E12AFDB95700C4AC3C /* AuthError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34653E02AFDB95700C4AC3C /* AuthError.swift */; };
@@ -58,6 +60,8 @@
 		E309126C2AFE9A6400019437 /* MealListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealListViewModel.swift; sourceTree = "<group>"; };
 		E309126E2AFE9A7900019437 /* MealListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealListView.swift; sourceTree = "<group>"; };
 		E30912712AFEA63C00019437 /* PanZoomImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanZoomImage.swift; sourceTree = "<group>"; };
+		E30912752AFEBA7000019437 /* MealDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDetailView.swift; sourceTree = "<group>"; };
+		E30912772AFEBAE900019437 /* MealImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealImage.swift; sourceTree = "<group>"; };
 		E34653D22AFD289600C4AC3C /* KeychainLocalStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainLocalStorage.swift; sourceTree = "<group>"; };
 		E34653DE2AFDB84400C4AC3C /* String+Base64.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Base64.swift"; sourceTree = "<group>"; };
 		E34653E02AFDB95700C4AC3C /* AuthError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthError.swift; sourceTree = "<group>"; };
@@ -106,10 +110,10 @@
 		E309125A2AFE8CBA00019437 /* Meal */ = {
 			isa = PBXGroup;
 			children = (
+				E30912742AFEBA5800019437 /* MealDetail */,
 				E30912702AFEA5C900019437 /* Components */,
 				E309125B2AFE8CCB00019437 /* Domain */,
-				E309126C2AFE9A6400019437 /* MealListViewModel.swift */,
-				E309126E2AFE9A7900019437 /* MealListView.swift */,
+				E30912732AFEBA3D00019437 /* MealList */,
 			);
 			path = Meal;
 			sourceTree = "<group>";
@@ -137,8 +141,26 @@
 			isa = PBXGroup;
 			children = (
 				E30912712AFEA63C00019437 /* PanZoomImage.swift */,
+				E30912772AFEBAE900019437 /* MealImage.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		E30912732AFEBA3D00019437 /* MealList */ = {
+			isa = PBXGroup;
+			children = (
+				E309126C2AFE9A6400019437 /* MealListViewModel.swift */,
+				E309126E2AFE9A7900019437 /* MealListView.swift */,
+			);
+			path = MealList;
+			sourceTree = "<group>";
+		};
+		E30912742AFEBA5800019437 /* MealDetail */ = {
+			isa = PBXGroup;
+			children = (
+				E30912752AFEBA7000019437 /* MealDetailView.swift */,
+			);
+			path = MealDetail;
 			sourceTree = "<group>";
 		};
 		E34653D42AFD2EA700C4AC3C /* Domain */ = {
@@ -406,8 +428,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E30912762AFEBA7000019437 /* MealDetailView.swift in Sources */,
 				E30912662AFE920E00019437 /* Endpoint.swift in Sources */,
 				E3851F0E2AFD175D00893C13 /* AuthViewModel.swift in Sources */,
+				E30912782AFEBAE900019437 /* MealImage.swift in Sources */,
 				E34653D32AFD289600C4AC3C /* KeychainLocalStorage.swift in Sources */,
 				E309126F2AFE9A7900019437 /* MealListView.swift in Sources */,
 				E30912722AFEA63C00019437 /* PanZoomImage.swift in Sources */,

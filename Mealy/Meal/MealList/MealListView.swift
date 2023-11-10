@@ -15,24 +15,7 @@ struct MealListView<ViewModel>: View where ViewModel: MealListViewModel {
     var body: some View {
         List(viewModel.meals, id: \.self) { meal in
             VStack(alignment: .center) {
-                AsyncImage(url: URL(string: meal.strMealThumb), scale: 1) { phase in
-                    switch phase {
-                    case .success(let image):
-                        image
-                            .resizable()
-                            .cornerRadius(20)
-                            .aspectRatio(contentMode: .fit)
-                    case .failure:
-                        Text("404! \n Image Not Available")
-                            .bold()
-                            .font(.title)
-                            .multilineTextAlignment(.center)
-                    default:
-                        ProgressView()
-                            .font(.largeTitle)
-                    }
-                }
-                .modifier(PanZoomImage(contentSize: imageSize))
+                MealImage(imageUrl: meal.strMealThumb, imageSize: imageSize)
                 Text(meal.strMeal)
                     .font(.title)
                     .multilineTextAlignment(.center)
