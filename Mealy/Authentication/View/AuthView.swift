@@ -47,6 +47,9 @@ struct AuthView<ViewModel>: View where ViewModel: AuthViewModel {
                 Text(viewModel.toggleButtonLabel)
             }
         }
+        .alert(isPresented: $viewModel.shouldDisplayAlert) {
+            Alert(title: Text("Authentication Failed"), message: Text(viewModel.errorMessage), dismissButton: .default(Text("Retry")))
+        }
     }
 }
 

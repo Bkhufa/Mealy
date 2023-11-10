@@ -7,7 +7,18 @@
 
 import Foundation
 
-enum AuthError: Error {
-    case userNotFound
-    case wrongCombination
+enum AuthError: String, LocalizedError, CustomStringConvertible {
+    case userNotFound = "Account Not Found"
+    case wrongCombination = "Wrong combination of username and password"
+    
+    var description: String {
+        let format = NSLocalizedString("%@", comment: "Error description")
+        return String.localizedStringWithFormat(format, rawValue)
+    }
+}
+
+extension LocalizedError where Self: CustomStringConvertible {
+   var errorDescription: String? {
+      return description
+   }
 }

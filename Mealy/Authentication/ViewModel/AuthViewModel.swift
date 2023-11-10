@@ -10,6 +10,8 @@ import Foundation
 protocol AuthViewModel: ObservableObject {
     var screenTitle: String { get }
     var toggleButtonLabel: String { get }
+    var shouldDisplayAlert: Bool { get set }
+    var errorMessage: String { get }
     
     var userName: String { get set }
     var password: String { get set }
@@ -34,9 +36,11 @@ enum AuthType: String {
 
 final class DefaultAuthViewModel: AuthViewModel {
     
+    @Published var authType: AuthType
     @Published var userName: String = ""
     @Published var password: String = ""
-    @Published var authType: AuthType
+    @Published var shouldDisplayAlert: Bool = false
+    @Published var errorMessage: String = ""
     
     private let useCase: AuthUseCase
     
@@ -63,8 +67,8 @@ final class DefaultAuthViewModel: AuthViewModel {
                 try useCase.register(userName: userName, password: password)
             }
         } catch {
-            //TODO: Handle Error
-            print(error)
+            shouldDisplayAlert = true
+            errorMessage = error.localizedDescription
         }
     }
     
