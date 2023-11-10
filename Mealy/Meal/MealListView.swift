@@ -10,7 +10,7 @@ import SwiftUI
 struct MealListView<ViewModel>: View where ViewModel: MealListViewModel {
     
     @ObservedObject var viewModel: ViewModel
-    private let imageSize = CGSize(width: UIScreen.main.bounds.width - 10, height: UIScreen.main.bounds.width - 10)
+    private let imageSize = CGSize(width: UIScreen.main.bounds.width * 0.95, height: UIScreen.main.bounds.width)
     
     var body: some View {
         List(viewModel.meals, id: \.self) { meal in
@@ -20,6 +20,7 @@ struct MealListView<ViewModel>: View where ViewModel: MealListViewModel {
                     case .success(let image):
                         image
                             .resizable()
+                            .cornerRadius(20)
                             .aspectRatio(contentMode: .fit)
                     case .failure:
                         Text("404! \n Image Not Available")
@@ -33,8 +34,13 @@ struct MealListView<ViewModel>: View where ViewModel: MealListViewModel {
                 }
                 .modifier(PanZoomImage(contentSize: imageSize))
                 Text(meal.strMeal)
+                    .font(.title)
+                    .multilineTextAlignment(.center)
             }
-            .frame(width: imageSize.width - 20, height: imageSize.height)
+            .padding(5)
+            .padding(.bottom, 10)
+            .frame(width: imageSize.width, height: imageSize.height)
+            .listRowSeparator(.hidden)
         }
         .listStyle(.plain)
         .onAppear {
