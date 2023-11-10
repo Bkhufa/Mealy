@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E309125D2AFE8CD900019437 /* MealView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E309125C2AFE8CD900019437 /* MealView.swift */; };
 		E34653D32AFD289600C4AC3C /* KeychainLocalStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34653D22AFD289600C4AC3C /* KeychainLocalStorage.swift */; };
 		E34653DF2AFDB84400C4AC3C /* String+Base64.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34653DE2AFDB84400C4AC3C /* String+Base64.swift */; };
 		E34653E12AFDB95700C4AC3C /* AuthError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34653E02AFDB95700C4AC3C /* AuthError.swift */; };
@@ -41,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E309125C2AFE8CD900019437 /* MealView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealView.swift; sourceTree = "<group>"; };
 		E34653D22AFD289600C4AC3C /* KeychainLocalStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainLocalStorage.swift; sourceTree = "<group>"; };
 		E34653DE2AFDB84400C4AC3C /* String+Base64.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Base64.swift"; sourceTree = "<group>"; };
 		E34653E02AFDB95700C4AC3C /* AuthError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthError.swift; sourceTree = "<group>"; };
@@ -85,6 +87,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E309125A2AFE8CBA00019437 /* Meal */ = {
+			isa = PBXGroup;
+			children = (
+				E309125B2AFE8CCB00019437 /* Domain */,
+				E309125C2AFE8CD900019437 /* MealView.swift */,
+			);
+			path = Meal;
+			sourceTree = "<group>";
+		};
+		E309125B2AFE8CCB00019437 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
 		E34653D42AFD2EA700C4AC3C /* Domain */ = {
 			isa = PBXGroup;
 			children = (
@@ -159,6 +177,7 @@
 		E3851EDC2AFD0F0900893C13 /* Mealy */ = {
 			isa = PBXGroup;
 			children = (
+				E309125A2AFE8CBA00019437 /* Meal */,
 				E34653DD2AFDB83400C4AC3C /* Utility */,
 				E34653D52AFD2EB200C4AC3C /* Infrastructure */,
 				E3851F082AFD116500893C13 /* Authentication */,
@@ -351,6 +370,7 @@
 				E34653E12AFDB95700C4AC3C /* AuthError.swift in Sources */,
 				E3851F102AFD1D6C00893C13 /* AuthUseCase.swift in Sources */,
 				E3851EDE2AFD0F0900893C13 /* MealyApp.swift in Sources */,
+				E309125D2AFE8CD900019437 /* MealView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
