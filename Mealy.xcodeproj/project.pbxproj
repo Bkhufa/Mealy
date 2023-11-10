@@ -18,6 +18,7 @@
 		E30912722AFEA63C00019437 /* PanZoomImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E30912712AFEA63C00019437 /* PanZoomImage.swift */; };
 		E30912762AFEBA7000019437 /* MealDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E30912752AFEBA7000019437 /* MealDetailView.swift */; };
 		E30912782AFEBAE900019437 /* MealImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E30912772AFEBAE900019437 /* MealImage.swift */; };
+		E309127A2AFEC30900019437 /* MealCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = E30912792AFEC30900019437 /* MealCard.swift */; };
 		E34653D32AFD289600C4AC3C /* KeychainLocalStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34653D22AFD289600C4AC3C /* KeychainLocalStorage.swift */; };
 		E34653DF2AFDB84400C4AC3C /* String+Base64.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34653DE2AFDB84400C4AC3C /* String+Base64.swift */; };
 		E34653E12AFDB95700C4AC3C /* AuthError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34653E02AFDB95700C4AC3C /* AuthError.swift */; };
@@ -62,6 +63,7 @@
 		E30912712AFEA63C00019437 /* PanZoomImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanZoomImage.swift; sourceTree = "<group>"; };
 		E30912752AFEBA7000019437 /* MealDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealDetailView.swift; sourceTree = "<group>"; };
 		E30912772AFEBAE900019437 /* MealImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealImage.swift; sourceTree = "<group>"; };
+		E30912792AFEC30900019437 /* MealCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealCard.swift; sourceTree = "<group>"; };
 		E34653D22AFD289600C4AC3C /* KeychainLocalStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainLocalStorage.swift; sourceTree = "<group>"; };
 		E34653DE2AFDB84400C4AC3C /* String+Base64.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Base64.swift"; sourceTree = "<group>"; };
 		E34653E02AFDB95700C4AC3C /* AuthError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthError.swift; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 			children = (
 				E30912712AFEA63C00019437 /* PanZoomImage.swift */,
 				E30912772AFEBAE900019437 /* MealImage.swift */,
+				E30912792AFEC30900019437 /* MealCard.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -438,6 +441,7 @@
 				E3851F0C2AFD119300893C13 /* AuthView.swift in Sources */,
 				E3851F142AFD20B500893C13 /* AuthModel.swift in Sources */,
 				E30912612AFE90EA00019437 /* Meal.swift in Sources */,
+				E309127A2AFEC30900019437 /* MealCard.swift in Sources */,
 				E3851F122AFD1F1500893C13 /* LocalStorage.swift in Sources */,
 				E34653DF2AFDB84400C4AC3C /* String+Base64.swift in Sources */,
 				E34653E12AFDB95700C4AC3C /* AuthError.swift in Sources */,

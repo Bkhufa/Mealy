@@ -13,21 +13,21 @@ struct MealListView<ViewModel>: View where ViewModel: MealListViewModel {
     private let imageSize = CGSize(width: UIScreen.main.bounds.width * 0.95, height: UIScreen.main.bounds.width)
     
     var body: some View {
-        List(viewModel.meals, id: \.self) { meal in
-            VStack(alignment: .center) {
-                MealImage(imageUrl: meal.strMealThumb, imageSize: imageSize)
-                Text(meal.strMeal)
-                    .font(.title)
-                    .multilineTextAlignment(.center)
+        NavigationStack {
+            List(viewModel.meals, id: \.self) { meal in
+                ZStack {
+                    NavigationLink(value: meal) { EmptyView() }
+                        .opacity(0.0)
+                    MealCard(meal: meal, imageSize: imageSize)
+                }
+                .listRowSeparator(.hidden)
             }
-            .padding(5)
-            .padding(.bottom, 10)
-            .frame(width: imageSize.width, height: imageSize.height)
-            .listRowSeparator(.hidden)
-        }
-        .listStyle(.plain)
-        .onAppear {
-            viewModel.fetchMealList()
+            .listStyle(.plain)
+            .onAppear {
+                viewModel.fetchMealList()
+            }
+            .navigationDestination(for: Meal.self, destination: MealDetailView.init)
+            .navigationTitle("Mealy")
         }
     }
 }

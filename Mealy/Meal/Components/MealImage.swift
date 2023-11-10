@@ -18,7 +18,6 @@ struct MealImage: View {
             case .success(let image):
                 image
                     .resizable()
-                    .cornerRadius(20)
                     .aspectRatio(contentMode: .fit)
             case .failure:
                 Text("404! \n Image Not Available")
