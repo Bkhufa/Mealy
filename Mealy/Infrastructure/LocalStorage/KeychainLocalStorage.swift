@@ -11,25 +11,19 @@ import Security
 struct KeyChainLocalStorage: LocalStorage {
     
     func writeToLocalStorage<T: LocalModel>(_ content: T) throws {
-        if SecItemAdd(content.mapToWriteKeychain(), nil) == noErr {
+        guard SecItemAdd(content.mapToWriteKeychain(), nil) == noErr
+        else {
+            guard SecItemDelete(content.mapToWriteKeychain()) == noErr else { throw LocalStorageError.failedToUpdate }
+            guard SecItemAdd(content.mapToWriteKeychain(), nil) == noErr else { throw LocalStorageError.failedToWrite }
             return
         }
-        if SecItemDelete(content.mapToWriteKeychain()) == noErr {
-            if SecItemAdd(content.mapToWriteKeychain(), nil) == noErr {
-                return
-            }
-            LocalStorageError.failedToUpdate
-        }
-        throw LocalStorageError.failedToWrite
+        return
     }
     
     func readFromLocalStorage<T: LocalModel>(_ content: T) throws -> T? {
         var item: CFTypeRef?
-        if SecItemCopyMatching(content.mapToReadKeychain() as CFDictionary, &item) == noErr {
-            return content.mapFromKeychain(model: item)
-        } else {
-            throw LocalStorageError.failedToRead
-        }
+        guard SecItemCopyMatching(content.mapToReadKeychain(), &item) == noErr else { throw LocalStorageError.failedToRead }
+        return content.mapFromKeychain(model: item)
     }
 }
 
@@ -41,7 +35,7 @@ struct KeyChainModel: LocalModel {
         let attributes: [String: Any] = [
             kSecClass as String: kSecClassGenericPassword,
             kSecAttrAccount as String: key,
-            kSecValueData as String: value,
+            kSecValueData as String: value ?? "",
         ]
         return attributes as CFDictionary
     }
