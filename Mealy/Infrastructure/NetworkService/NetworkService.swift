@@ -30,7 +30,7 @@ protocol NetworkService {
     func request<T: Endpoint>(_ endpoint: T) async throws -> T.Response
 }
 
-final class URLSessionNetworkService: NetworkService {
+final class AlamofireNetworkService: NetworkService {
     
     func request<T: Endpoint>(_ endpoint: T) async throws -> T.Response {
         
