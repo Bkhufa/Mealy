@@ -23,7 +23,8 @@ struct DefaultAuthUseCase: AuthUseCase {
     
     func login(userName: String, password: String) throws -> AuthModel {
         let inputCredential = AuthModel(userName: userName, password: password)
-        guard let retreivedCredential = storage.readFromLocalStorage(inputCredential) else { throw AuthError.userNotFound }
+        guard let retrievedObject = storage.readFromLocalStorage(inputCredential.mapToKeychain()) else { throw AuthError.userNotFound }
+        let retreivedCredential = AuthModel(keychainModel: retrievedObject)
         
         if inputCredential == retreivedCredential {
             return inputCredential
@@ -33,7 +34,8 @@ struct DefaultAuthUseCase: AuthUseCase {
     }
     
     func register(userName: String, password: String) throws {
-        try storage.writeToLocalStorage(AuthModel(userName: userName, password: password))
+        let model = AuthModel(userName: userName, password: password).mapToKeychain()
+        try storage.writeToLocalStorage(model)
     }
     
     func saveCredential(_ credential: AuthModel) throws {
