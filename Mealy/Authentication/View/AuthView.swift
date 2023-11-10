@@ -48,7 +48,13 @@ struct AuthView<ViewModel>: View where ViewModel: AuthViewModel {
             }
         }
         .alert(isPresented: $viewModel.shouldDisplayAlert) {
-            Alert(title: Text("Authentication Failed"), message: Text(viewModel.errorMessage), dismissButton: .default(Text("Retry")))
+            Alert(
+                title: Text(viewModel.alertMessage.title),
+                message: Text(viewModel.alertMessage.message),
+                dismissButton: .default(Text(viewModel.alertMessage.actionLabel), action: {
+                    viewModel.alertMessage.action?()
+                })
+            )
         }
     }
 }
