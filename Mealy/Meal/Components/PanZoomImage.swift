@@ -33,6 +33,8 @@ struct PanZoomImage: ViewModifier {
                 .frame(width: contentSize.width * currentScale, height: contentSize.height * currentScale, alignment: .center)
                 .modifier(PinchToZoom(minScale: min, maxScale: max, scale: $currentScale))
         }
+        .scrollDisabled(currentScale == 1.0)
+        .scrollIndicators(.hidden)
         .gesture(doubleTapGesture)
         .animation(.easeInOut, value: currentScale)
     }
