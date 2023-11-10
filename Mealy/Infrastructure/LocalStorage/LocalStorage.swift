@@ -9,7 +9,7 @@ import Foundation
 
 protocol LocalStorage {
     func writeToLocalStorage<T: LocalModel>(_ content: T) throws
-    func readFromLocalStorage<T: LocalModel>(_ content: T) throws -> T?
+    func readFromLocalStorage<T: LocalModel>(_ content: T) -> T?
 }
 
 protocol LocalModel {

@@ -20,9 +20,9 @@ struct KeyChainLocalStorage: LocalStorage {
         return
     }
     
-    func readFromLocalStorage<T: LocalModel>(_ content: T) throws -> T? {
+    func readFromLocalStorage<T: LocalModel>(_ content: T) -> T? {
         var item: CFTypeRef?
-        guard SecItemCopyMatching(content.mapToReadKeychain(), &item) == noErr else { throw LocalStorageError.failedToRead }
+        guard SecItemCopyMatching(content.mapToReadKeychain(), &item) == noErr else { return nil }
         return content.mapFromKeychain(model: item)
     }
 }
