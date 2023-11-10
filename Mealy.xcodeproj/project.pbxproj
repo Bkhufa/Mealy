@@ -7,12 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E309125D2AFE8CD900019437 /* MealView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E309125C2AFE8CD900019437 /* MealView.swift */; };
 		E309125F2AFE903A00019437 /* MealUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E309125E2AFE903A00019437 /* MealUseCase.swift */; };
 		E30912612AFE90EA00019437 /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = E30912602AFE90EA00019437 /* Meal.swift */; };
 		E30912642AFE918800019437 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E30912632AFE918800019437 /* NetworkService.swift */; };
 		E30912662AFE920E00019437 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E30912652AFE920E00019437 /* Endpoint.swift */; };
 		E30912692AFE929500019437 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = E30912682AFE929500019437 /* Alamofire */; };
+		E309126B2AFE95E100019437 /* GetMealListEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E309126A2AFE95E100019437 /* GetMealListEndpoint.swift */; };
+		E309126D2AFE9A6400019437 /* MealListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E309126C2AFE9A6400019437 /* MealListViewModel.swift */; };
+		E309126F2AFE9A7900019437 /* MealListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E309126E2AFE9A7900019437 /* MealListView.swift */; };
 		E34653D32AFD289600C4AC3C /* KeychainLocalStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34653D22AFD289600C4AC3C /* KeychainLocalStorage.swift */; };
 		E34653DF2AFDB84400C4AC3C /* String+Base64.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34653DE2AFDB84400C4AC3C /* String+Base64.swift */; };
 		E34653E12AFDB95700C4AC3C /* AuthError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34653E02AFDB95700C4AC3C /* AuthError.swift */; };
@@ -47,11 +49,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		E309125C2AFE8CD900019437 /* MealView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealView.swift; sourceTree = "<group>"; };
 		E309125E2AFE903A00019437 /* MealUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealUseCase.swift; sourceTree = "<group>"; };
 		E30912602AFE90EA00019437 /* Meal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meal.swift; sourceTree = "<group>"; };
 		E30912632AFE918800019437 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		E30912652AFE920E00019437 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		E309126A2AFE95E100019437 /* GetMealListEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetMealListEndpoint.swift; sourceTree = "<group>"; };
+		E309126C2AFE9A6400019437 /* MealListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealListViewModel.swift; sourceTree = "<group>"; };
+		E309126E2AFE9A7900019437 /* MealListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealListView.swift; sourceTree = "<group>"; };
 		E34653D22AFD289600C4AC3C /* KeychainLocalStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainLocalStorage.swift; sourceTree = "<group>"; };
 		E34653DE2AFDB84400C4AC3C /* String+Base64.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Base64.swift"; sourceTree = "<group>"; };
 		E34653E02AFDB95700C4AC3C /* AuthError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthError.swift; sourceTree = "<group>"; };
@@ -101,7 +105,8 @@
 			isa = PBXGroup;
 			children = (
 				E309125B2AFE8CCB00019437 /* Domain */,
-				E309125C2AFE8CD900019437 /* MealView.swift */,
+				E309126C2AFE9A6400019437 /* MealListViewModel.swift */,
+				E309126E2AFE9A7900019437 /* MealListView.swift */,
 			);
 			path = Meal;
 			sourceTree = "<group>";
@@ -111,6 +116,7 @@
 			children = (
 				E309125E2AFE903A00019437 /* MealUseCase.swift */,
 				E30912602AFE90EA00019437 /* Meal.swift */,
+				E309126A2AFE95E100019437 /* GetMealListEndpoint.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -392,17 +398,19 @@
 				E30912662AFE920E00019437 /* Endpoint.swift in Sources */,
 				E3851F0E2AFD175D00893C13 /* AuthViewModel.swift in Sources */,
 				E34653D32AFD289600C4AC3C /* KeychainLocalStorage.swift in Sources */,
+				E309126F2AFE9A7900019437 /* MealListView.swift in Sources */,
 				E3851F0C2AFD119300893C13 /* AuthView.swift in Sources */,
 				E3851F142AFD20B500893C13 /* AuthModel.swift in Sources */,
 				E30912612AFE90EA00019437 /* Meal.swift in Sources */,
 				E3851F122AFD1F1500893C13 /* LocalStorage.swift in Sources */,
 				E34653DF2AFDB84400C4AC3C /* String+Base64.swift in Sources */,
 				E34653E12AFDB95700C4AC3C /* AuthError.swift in Sources */,
+				E309126D2AFE9A6400019437 /* MealListViewModel.swift in Sources */,
 				E3851F102AFD1D6C00893C13 /* AuthUseCase.swift in Sources */,
 				E3851EDE2AFD0F0900893C13 /* MealyApp.swift in Sources */,
 				E309125F2AFE903A00019437 /* MealUseCase.swift in Sources */,
 				E30912642AFE918800019437 /* NetworkService.swift in Sources */,
-				E309125D2AFE8CD900019437 /* MealView.swift in Sources */,
+				E309126B2AFE95E100019437 /* GetMealListEndpoint.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

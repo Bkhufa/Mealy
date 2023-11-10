@@ -39,17 +39,12 @@ final class URLSessionNetworkService: NetworkService {
         }
         
         let response = await AF.request(urlRequest, interceptor: .retryPolicy)
-        // Caching customization.
             .cacheResponse(using: .cache)
-        // Validate response code and Content-Type.
             .validate()
-        // Produce a cURL command for the request.
             .cURLDescription { description in
                 print(description)
             }
-        // Automatic Decodable support with background parsing.
             .serializingDecodable(T.Response.self)
-        // Await the full response with metrics and a parsed body.
             .response
             .value
         
