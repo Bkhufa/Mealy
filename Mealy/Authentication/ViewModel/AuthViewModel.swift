@@ -16,7 +16,7 @@ protocol AuthViewModel: ObservableObject {
     var password: String { get set }
     var shouldDisplayAlert: Bool { get set }
     
-    func onSubmitButtonTappedShouldNavigate() -> Bool
+    func onSubmitTappedShouldNavigate() -> Bool
     func toggleAuthType()
 }
 
@@ -57,7 +57,7 @@ final class DefaultAuthViewModel: AuthViewModel {
         self.authType = authType
     }
     
-    func onSubmitButtonTappedShouldNavigate() -> Bool {
+    func onSubmitTappedShouldNavigate() -> Bool {
         do {
             switch authType {
             case .login:

@@ -10,6 +10,8 @@ import SwiftUI
 struct MealListView<ViewModel>: View where ViewModel: MealListViewModel {
     
     @ObservedObject var viewModel: ViewModel
+    @EnvironmentObject var flowViewModel: FlowViewModel
+
     private let imageSize = CGSize(width: UIScreen.main.bounds.width * 0.95, height: UIScreen.main.bounds.width)
     
     var body: some View {
@@ -28,6 +30,13 @@ struct MealListView<ViewModel>: View where ViewModel: MealListViewModel {
             }
             .navigationDestination(for: Meal.self, destination: MealDetailView.init)
             .navigationTitle("Mealy")
+            .toolbar {
+                Button {
+                    flowViewModel.navigateToAuth()
+                } label: {
+                    Image(systemName:  "rectangle.portrait.and.arrow.right")
+                }
+            }
         }
     }
 }

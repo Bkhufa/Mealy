@@ -31,7 +31,7 @@ struct AuthView<ViewModel>: View where ViewModel: AuthViewModel {
             .padding(.vertical, 5)
             
             Button {
-                if viewModel.onSubmitButtonTappedShouldNavigate() {
+                if viewModel.onSubmitTappedShouldNavigate() {
                     flowViewModel.navigateToMeal()
                 }
             } label: {
