@@ -15,6 +15,7 @@ protocol AuthViewModel: ObservableObject {
     var userName: String { get set }
     var password: String { get set }
     var shouldDisplayAlert: Bool { get set }
+    var shouldNavigateToMeal: Bool { get set }
     
     func onSubmitButtonTapped()
     func toggleAuthType()
@@ -40,6 +41,7 @@ final class DefaultAuthViewModel: AuthViewModel {
     @Published var userName: String = ""
     @Published var password: String = ""
     @Published var shouldDisplayAlert: Bool = false
+    @Published var shouldNavigateToMeal: Bool = false
     @Published var alertMessage: AlertData = AlertData(title: "", message: "", actionLabel: "", action: nil)
     
     private let useCase: AuthUseCase
@@ -63,6 +65,7 @@ final class DefaultAuthViewModel: AuthViewModel {
             case .login:
                 let credential = try useCase.login(userName: userName, password: password)
                 try useCase.saveCredential(credential)
+                shouldNavigateToMeal = true
             case .register:
                 try useCase.register(userName: userName, password: password)
                 let alertData = AlertData(

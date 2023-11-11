@@ -12,40 +12,48 @@ struct AuthView<ViewModel>: View where ViewModel: AuthViewModel {
     @ObservedObject var viewModel: ViewModel
     
     var body: some View {
-        VStack(spacing: 10) {
-            Text(viewModel.screenTitle)
-                .font(.largeTitle)
-                .fontWeight(.heavy)
-                .padding(.bottom, 10)
-            Group {
-                TextField("Username", text: $viewModel.userName)
-                TextField("Password", text: $viewModel.password)
-            }
-            .padding(20)
-            .background(
-                RoundedRectangle(cornerRadius: 10, style: .continuous)
-                    .stroke(Color.gray, lineWidth: 1.5)
-            )
-            .padding(.horizontal, 20)
-            .padding(.vertical, 5)
-            
-            Button {
-                viewModel.onSubmitButtonTapped()
-            } label: {
+        NavigationStack {
+            VStack(spacing: 10) {
                 Text(viewModel.screenTitle)
-                    .frame(maxWidth: .infinity)
-                    .padding()
-                    .background(Color.blue)
-                    .foregroundColor(.white)
-                    .clipShape(RoundedRectangle(cornerRadius: 50))
+                    .font(.largeTitle)
+                    .fontWeight(.heavy)
+                    .padding(.bottom, 10)
+                Group {
+                    TextField("Username", text: $viewModel.userName)
+                    TextField("Password", text: $viewModel.password)
+                }
+                .padding(20)
+                .background(
+                    RoundedRectangle(cornerRadius: 10, style: .continuous)
+                        .stroke(Color.gray, lineWidth: 1.5)
+                )
+                .padding(.horizontal, 20)
+                .padding(.vertical, 5)
+                
+                Button {
+                    viewModel.onSubmitButtonTapped()
+                } label: {
+                    Text(viewModel.screenTitle)
+                        .frame(maxWidth: .infinity)
+                        .padding()
+                        .background(Color.blue)
+                        .foregroundColor(.white)
+                        .clipShape(RoundedRectangle(cornerRadius: 50))
+                }
+                .padding()
+                
+                Button {
+                    viewModel.toggleAuthType()
+                } label: {
+                    Text(viewModel.toggleButtonLabel)
+                }
             }
-            .padding()
-            
-            Button {
-                viewModel.toggleAuthType()
-            } label: {
-                Text(viewModel.toggleButtonLabel)
-            }
+            .navigationDestination(
+                isPresented: $viewModel.shouldNavigateToMeal) {
+                    MealListView(viewModel: DefaultMealListViewModel(useCase: DefaultMealUseCase(service: AlamofireNetworkService())))
+                    Text("")
+                        .hidden()
+                }
         }
         .alert(isPresented: $viewModel.shouldDisplayAlert) {
             Alert(
