@@ -16,13 +16,21 @@ struct MealListView<ViewModel>: View where ViewModel: MealListViewModel {
     
     var body: some View {
         NavigationStack {
-            List(viewModel.meals, id: \.self) { meal in
-                ZStack {
-                    NavigationLink(value: meal) { EmptyView() }
-                        .opacity(0.0)
-                    MealCard(meal: meal, imageSize: imageSize)
-                }
-                .listRowSeparator(.hidden)
+            List {
+                Section(footer: ProgressView()
+                    .frame(idealWidth: .infinity, maxWidth: .infinity, alignment: .center)
+                    .listRowSeparator(.hidden)
+                    .task {
+                        await viewModel.fetchNextMealList()
+                    }) {
+                        ForEach(viewModel.meals, id: \.self) { meal in
+                            ZStack {
+                                NavigationLink(value: meal) { EmptyView() }
+                                    .opacity(0.0)
+                                MealCard(meal: meal, imageSize: imageSize)
+                            }
+                        }
+                    }
             }
             .listStyle(.plain)
             .task {
