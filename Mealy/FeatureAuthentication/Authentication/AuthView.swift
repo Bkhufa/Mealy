@@ -20,7 +20,7 @@ struct AuthView<ViewModel>: View where ViewModel: AuthViewModel {
                 .padding(.bottom, 10)
             Group {
                 TextField("Username", text: $viewModel.userName)
-                TextField("Password", text: $viewModel.password)
+                SecureTextField(title: "Password", text: $viewModel.password)
             }
             .padding(20)
             .background(

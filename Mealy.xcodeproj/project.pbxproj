@@ -38,6 +38,7 @@
 		E3E912592AFF382A00234C57 /* AppFlowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E912582AFF382A00234C57 /* AppFlowView.swift */; };
 		E3E9125E2AFF3D3800234C57 /* AuthViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E9125D2AFF3D3800234C57 /* AuthViewModelTest.swift */; };
 		E3E912612AFF3E9600234C57 /* MockAuthUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E912602AFF3E9600234C57 /* MockAuthUseCase.swift */; };
+		E3F0F88C2AFF844100E99C37 /* SecureTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F0F88B2AFF844100E99C37 /* SecureTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +92,7 @@
 		E3E912582AFF382A00234C57 /* AppFlowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFlowView.swift; sourceTree = "<group>"; };
 		E3E9125D2AFF3D3800234C57 /* AuthViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModelTest.swift; sourceTree = "<group>"; };
 		E3E912602AFF3E9600234C57 /* MockAuthUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAuthUseCase.swift; sourceTree = "<group>"; };
+		E3F0F88B2AFF844100E99C37 /* SecureTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -285,6 +287,7 @@
 		E3851F082AFD116500893C13 /* FeatureAuthentication */ = {
 			isa = PBXGroup;
 			children = (
+				E3F0F88A2AFF842800E99C37 /* Component */,
 				E3E9125C2AFF3CC800234C57 /* Authentication */,
 				E34653D42AFD2EA700C4AC3C /* Domain */,
 			);
@@ -316,6 +319,14 @@
 				E3E912602AFF3E9600234C57 /* MockAuthUseCase.swift */,
 			);
 			path = Helper;
+			sourceTree = "<group>";
+		};
+		E3F0F88A2AFF842800E99C37 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				E3F0F88B2AFF844100E99C37 /* SecureTextField.swift */,
+			);
+			path = Component;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -476,6 +487,7 @@
 				E309125F2AFE903A00019437 /* MealUseCase.swift in Sources */,
 				E30912642AFE918800019437 /* NetworkService.swift in Sources */,
 				E309126B2AFE95E100019437 /* GetMealListEndpoint.swift in Sources */,
+				E3F0F88C2AFF844100E99C37 /* SecureTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
