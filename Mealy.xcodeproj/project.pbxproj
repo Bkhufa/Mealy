@@ -113,15 +113,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		E309125A2AFE8CBA00019437 /* Meal */ = {
+		E309125A2AFE8CBA00019437 /* FeatureMeal */ = {
 			isa = PBXGroup;
 			children = (
-				E30912742AFEBA5800019437 /* MealDetail */,
 				E30912702AFEA5C900019437 /* Components */,
 				E309125B2AFE8CCB00019437 /* Domain */,
 				E30912732AFEBA3D00019437 /* MealList */,
+				E30912742AFEBA5800019437 /* MealDetail */,
 			);
-			path = Meal;
+			path = FeatureMeal;
 			sourceTree = "<group>";
 		};
 		E309125B2AFE8CCB00019437 /* Domain */ = {
@@ -199,22 +199,6 @@
 			path = LocalStorage;
 			sourceTree = "<group>";
 		};
-		E34653DB2AFD2F2700C4AC3C /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				E3851F0D2AFD175D00893C13 /* AuthViewModel.swift */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		E34653DC2AFD2F3800C4AC3C /* View */ = {
-			isa = PBXGroup;
-			children = (
-				E3851F0B2AFD119300893C13 /* AuthView.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 		E34653DD2AFDB83400C4AC3C /* Utility */ = {
 			isa = PBXGroup;
 			children = (
@@ -246,10 +230,10 @@
 		E3851EDC2AFD0F0900893C13 /* Mealy */ = {
 			isa = PBXGroup;
 			children = (
-				E309125A2AFE8CBA00019437 /* Meal */,
 				E34653DD2AFDB83400C4AC3C /* Utility */,
 				E34653D52AFD2EB200C4AC3C /* Infrastructure */,
-				E3851F082AFD116500893C13 /* Authentication */,
+				E309125A2AFE8CBA00019437 /* FeatureMeal */,
+				E3851F082AFD116500893C13 /* FeatureAuthentication */,
 				E3851EDD2AFD0F0900893C13 /* MealyApp.swift */,
 				E3851F072AFD114F00893C13 /* SupportingFiles */,
 			);
@@ -290,14 +274,13 @@
 			path = SupportingFiles;
 			sourceTree = "<group>";
 		};
-		E3851F082AFD116500893C13 /* Authentication */ = {
+		E3851F082AFD116500893C13 /* FeatureAuthentication */ = {
 			isa = PBXGroup;
 			children = (
-				E34653DC2AFD2F3800C4AC3C /* View */,
-				E34653DB2AFD2F2700C4AC3C /* ViewModel */,
+				E3E9125C2AFF3CC800234C57 /* Authentication */,
 				E34653D42AFD2EA700C4AC3C /* Domain */,
 			);
-			path = Authentication;
+			path = FeatureAuthentication;
 			sourceTree = "<group>";
 		};
 		E3E912552AFF377400234C57 /* Navigation */ = {
@@ -307,6 +290,15 @@
 				E3E912582AFF382A00234C57 /* AppFlowView.swift */,
 			);
 			path = Navigation;
+			sourceTree = "<group>";
+		};
+		E3E9125C2AFF3CC800234C57 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				E3851F0B2AFD119300893C13 /* AuthView.swift */,
+				E3851F0D2AFD175D00893C13 /* AuthViewModel.swift */,
+			);
+			path = Authentication;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
