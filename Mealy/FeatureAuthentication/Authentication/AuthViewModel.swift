@@ -41,7 +41,11 @@ final class DefaultAuthViewModel: AuthViewModel {
     @Published var userName: String = ""
     @Published var password: String = ""
     @Published var shouldDisplayAlert: Bool = false
-    @Published var alertMessage: AlertData = AlertData(title: "", message: "", actionLabel: "", action: nil)
+    var alertMessage: AlertData = AlertData(title: "", message: "", actionLabel: "", action: nil) {
+        didSet {
+            shouldDisplayAlert = true
+        }
+    }
     
     private let useCase: AuthUseCase
     
@@ -68,23 +72,21 @@ final class DefaultAuthViewModel: AuthViewModel {
                 return true
             case .register:
                 try useCase.register(userName: userName, password: password)
-                let alertData = AlertData(
+                alertMessage = AlertData(
                     title: "Registration Succes!",
                     message: "You have successfully registered, please login",
                     actionLabel: "Login",
                     action: { [weak self] in
                         self?.authType = .login
                     })
-                displayAllert(alertData)
             }
         } catch {
-            let alertData = AlertData(
+            alertMessage = AlertData(
                 title: "Authentication Failed",
                 message: error.localizedDescription,
                 actionLabel: "Retry",
                 action: nil
             )
-            displayAllert(alertData)
         }
         return false
     }
@@ -95,11 +97,6 @@ final class DefaultAuthViewModel: AuthViewModel {
             return
         }
         authType = .login
-    }
-    
-    private func displayAllert(_ message: AlertData) {
-        shouldDisplayAlert = true
-        alertMessage = message
     }
 }
 

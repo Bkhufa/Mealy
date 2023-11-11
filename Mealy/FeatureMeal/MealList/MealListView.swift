@@ -19,7 +19,6 @@ struct MealListView<ViewModel>: View where ViewModel: MealListViewModel {
             List {
                 Section(footer: ProgressView()
                     .frame(idealWidth: .infinity, maxWidth: .infinity, alignment: .center)
-                    .listRowSeparator(.hidden)
                     .task {
                         await viewModel.fetchNextMealList()
                     }) {
@@ -29,6 +28,7 @@ struct MealListView<ViewModel>: View where ViewModel: MealListViewModel {
                                     .opacity(0.0)
                                 MealCard(meal: meal, imageSize: imageSize)
                             }
+                            .listRowSeparator(.hidden)
                         }
                     }
             }
@@ -44,6 +44,15 @@ struct MealListView<ViewModel>: View where ViewModel: MealListViewModel {
                 } label: {
                     Image(systemName:  "rectangle.portrait.and.arrow.right")
                 }
+            }
+            .alert(isPresented: $viewModel.shouldDisplayAlert) {
+                Alert(
+                    title: Text(viewModel.alertMessage.title),
+                    message: Text(viewModel.alertMessage.message),
+                    dismissButton: .default(Text(viewModel.alertMessage.actionLabel), action: {
+                        viewModel.alertMessage.action?()
+                    })
+                )
             }
         }
     }

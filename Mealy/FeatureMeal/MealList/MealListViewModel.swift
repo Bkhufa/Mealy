@@ -6,9 +6,13 @@
 //
 
 import Foundation
+import Alamofire
 
 protocol MealListViewModel: ObservableObject {
     var meals: [Meal] { get }
+    var alertMessage: AlertData { get }
+    
+    var shouldDisplayAlert: Bool { get set }
     
     func fetchMealList() async
     func fetchNextMealList() async
@@ -17,6 +21,12 @@ protocol MealListViewModel: ObservableObject {
 final class DefaultMealListViewModel: MealListViewModel {
     
     @Published var meals: [Meal] = []
+    @Published var shouldDisplayAlert: Bool = false
+    var alertMessage: AlertData = AlertData(title: "", message: "", actionLabel: "", action: nil) {
+        didSet {
+            shouldDisplayAlert = true
+        }
+    }
     var currentPage = 0
     
     private let useCase: MealUseCase
@@ -25,12 +35,33 @@ final class DefaultMealListViewModel: MealListViewModel {
         self.useCase = useCase
     }
     
+    @MainActor
     private func getMealList(firstLetter: String) async -> [Meal] {
         do {
-            return try await useCase.fetchMealList(firstLetter: firstLetter)
+            guard let meals = try await useCase.fetchMealList(firstLetter: firstLetter) else { return [] }
+            return meals
         } catch {
-            //TODO: Handle error
-            print(error)
+            let alertData = AlertData(
+                title: "Request Error",
+                message: error.localizedDescription,
+                actionLabel: "Retry",
+                action: {
+                    Task { [weak self] in
+                        await self?.fetchMealList()
+                    }
+                }
+            )
+
+            if let err = error as? AFError {
+                switch err {
+                case .explicitlyCancelled:
+                    break
+                default:
+                    alertMessage = alertData
+                }
+                return []
+            }
+            alertMessage = alertData
         }
         return []
     }
