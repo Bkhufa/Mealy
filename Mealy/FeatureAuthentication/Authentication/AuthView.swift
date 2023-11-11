@@ -9,7 +9,8 @@ import SwiftUI
 
 struct AuthView<ViewModel>: View where ViewModel: AuthViewModel {
     
-    @ObservedObject var viewModel: ViewModel
+    @StateObject var viewModel: ViewModel
+    @EnvironmentObject var flowViewModel: FlowViewModel
     
     var body: some View {
         VStack(spacing: 10) {
@@ -30,7 +31,9 @@ struct AuthView<ViewModel>: View where ViewModel: AuthViewModel {
             .padding(.vertical, 5)
             
             Button {
-                viewModel.onSubmitButtonTapped()
+                if viewModel.authenticateShouldNavigate() {
+                    flowViewModel.navigateToMeal()
+                }
             } label: {
                 Text(viewModel.screenTitle)
                     .frame(maxWidth: .infinity)

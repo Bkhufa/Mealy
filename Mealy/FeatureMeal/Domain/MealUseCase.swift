@@ -8,7 +8,7 @@
 import Foundation
 
 protocol MealUseCase {
-    func fetchMealList(firstLetter: String) async throws -> [Meal]
+    func fetchMealList(firstLetter: String) async throws -> [Meal]?
 }
 
 final class DefaultMealUseCase: MealUseCase {
@@ -19,8 +19,8 @@ final class DefaultMealUseCase: MealUseCase {
         self.service = service
     }
     
-    func fetchMealList(firstLetter: String) async throws -> [Meal] {
+    func fetchMealList(firstLetter: String) async throws -> [Meal]? {
         let endpoint = GetMealListEndpoint(firstLetter: firstLetter)
-        return try await service.request(endpoint).meals
+        return try await service.request(endpoint)?.meals
     }
 }

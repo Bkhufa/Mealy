@@ -27,12 +27,12 @@ enum NetworkError: String, LocalizedError, CustomStringConvertible {
 }
 
 protocol NetworkService {
-    func request<T: Endpoint>(_ endpoint: T) async throws -> T.Response
+    func request<T: Endpoint>(_ endpoint: T) async throws -> T.Response?
 }
 
 final class AlamofireNetworkService: NetworkService {
     
-    func request<T: Endpoint>(_ endpoint: T) async throws -> T.Response {
+    func request<T: Endpoint>(_ endpoint: T) async throws -> T.Response? {
         
         guard let urlRequest = makeURLRequest(endpoint) else {
             throw NetworkError.invalidEndpoint
@@ -46,10 +46,13 @@ final class AlamofireNetworkService: NetworkService {
             }
             .serializingDecodable(T.Response.self)
             .response
-            .value
         
-        guard let response = response else { throw NetworkError.emptyData }
-        return response
+        switch response.result {
+        case .success(let success):
+            return success
+        case .failure(let failure):
+            throw failure
+        }
     }
     
     private func makeURLRequest<T: Endpoint>(_ endpoint: T) -> URLRequest? {

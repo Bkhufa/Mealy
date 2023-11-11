@@ -43,12 +43,11 @@ struct DefaultAuthUseCase: AuthUseCase {
         let base64Data = concatenatedCredential.base64Encoded
         let keychainModel = KeyChainModel(key: "credentials", value: base64Data)
         try storage.writeToLocalStorage(keychainModel)
-        try retrieveCredential()
     }
     
-    // TODO: Remove
+    // MARK: Only for proof that the credentials are actually saved in Keychain, encoded in base64
     func retrieveCredential() throws {
-        let anu = storage.readFromLocalStorage(KeyChainModel(key: "credentials", value: nil))
-        print("cred", anu?.value?.base64Decoded?.string)
+        let cred = storage.readFromLocalStorage(KeyChainModel(key: "credentials", value: nil))
+        print("cred", cred?.value?.base64Decoded?.string as Any)
     }
 }
