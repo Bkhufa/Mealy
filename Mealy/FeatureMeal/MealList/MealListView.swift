@@ -25,8 +25,8 @@ struct MealListView<ViewModel>: View where ViewModel: MealListViewModel {
                 .listRowSeparator(.hidden)
             }
             .listStyle(.plain)
-            .onAppear {
-                viewModel.fetchMealList()
+            .task {
+                await viewModel.fetchMealList()
             }
             .navigationDestination(for: Meal.self, destination: MealDetailView.init)
             .navigationTitle("Mealy")

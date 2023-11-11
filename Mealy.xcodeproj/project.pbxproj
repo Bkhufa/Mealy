@@ -22,10 +22,11 @@
 		E34653D32AFD289600C4AC3C /* KeychainLocalStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34653D22AFD289600C4AC3C /* KeychainLocalStorage.swift */; };
 		E34653DF2AFDB84400C4AC3C /* String+Base64.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34653DE2AFDB84400C4AC3C /* String+Base64.swift */; };
 		E34653E12AFDB95700C4AC3C /* AuthError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E34653E02AFDB95700C4AC3C /* AuthError.swift */; };
+		E3827DEA2AFF573500642D9B /* MealListViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3827DE92AFF573500642D9B /* MealListViewModelTest.swift */; };
+		E3827DEC2AFF576800642D9B /* MockMealUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3827DEB2AFF576800642D9B /* MockMealUseCase.swift */; };
 		E3851EDE2AFD0F0900893C13 /* MealyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3851EDD2AFD0F0900893C13 /* MealyApp.swift */; };
 		E3851EE22AFD0F0B00893C13 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3851EE12AFD0F0B00893C13 /* Assets.xcassets */; };
 		E3851EE52AFD0F0B00893C13 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3851EE42AFD0F0B00893C13 /* Preview Assets.xcassets */; };
-		E3851EEF2AFD0F0B00893C13 /* MealyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3851EEE2AFD0F0B00893C13 /* MealyTests.swift */; };
 		E3851EF92AFD0F0B00893C13 /* MealyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3851EF82AFD0F0B00893C13 /* MealyUITests.swift */; };
 		E3851EFB2AFD0F0B00893C13 /* MealyUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3851EFA2AFD0F0B00893C13 /* MealyUITestsLaunchTests.swift */; };
 		E3851F0C2AFD119300893C13 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3851F0B2AFD119300893C13 /* AuthView.swift */; };
@@ -71,12 +72,13 @@
 		E34653D22AFD289600C4AC3C /* KeychainLocalStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainLocalStorage.swift; sourceTree = "<group>"; };
 		E34653DE2AFDB84400C4AC3C /* String+Base64.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Base64.swift"; sourceTree = "<group>"; };
 		E34653E02AFDB95700C4AC3C /* AuthError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthError.swift; sourceTree = "<group>"; };
+		E3827DE92AFF573500642D9B /* MealListViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealListViewModelTest.swift; sourceTree = "<group>"; };
+		E3827DEB2AFF576800642D9B /* MockMealUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockMealUseCase.swift; sourceTree = "<group>"; };
 		E3851EDA2AFD0F0900893C13 /* Mealy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mealy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3851EDD2AFD0F0900893C13 /* MealyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealyApp.swift; sourceTree = "<group>"; };
 		E3851EE12AFD0F0B00893C13 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E3851EE42AFD0F0B00893C13 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E3851EEA2AFD0F0B00893C13 /* MealyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MealyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E3851EEE2AFD0F0B00893C13 /* MealyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealyTests.swift; sourceTree = "<group>"; };
 		E3851EF42AFD0F0B00893C13 /* MealyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MealyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3851EF82AFD0F0B00893C13 /* MealyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealyUITests.swift; sourceTree = "<group>"; };
 		E3851EFA2AFD0F0B00893C13 /* MealyUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealyUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -256,8 +258,8 @@
 			isa = PBXGroup;
 			children = (
 				E3E9125F2AFF3DA700234C57 /* Helper */,
-				E3851EEE2AFD0F0B00893C13 /* MealyTests.swift */,
 				E3E9125D2AFF3D3800234C57 /* AuthViewModelTest.swift */,
+				E3827DE92AFF573500642D9B /* MealListViewModelTest.swift */,
 			);
 			path = MealyTests;
 			sourceTree = "<group>";
@@ -310,6 +312,7 @@
 		E3E9125F2AFF3DA700234C57 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				E3827DEB2AFF576800642D9B /* MockMealUseCase.swift */,
 				E3E912602AFF3E9600234C57 /* MockAuthUseCase.swift */,
 			);
 			path = Helper;
@@ -480,8 +483,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3827DEA2AFF573500642D9B /* MealListViewModelTest.swift in Sources */,
+				E3827DEC2AFF576800642D9B /* MockMealUseCase.swift in Sources */,
 				E3E9125E2AFF3D3800234C57 /* AuthViewModelTest.swift in Sources */,
-				E3851EEF2AFD0F0B00893C13 /* MealyTests.swift in Sources */,
 				E3E912612AFF3E9600234C57 /* MockAuthUseCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

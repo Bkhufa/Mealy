@@ -10,7 +10,7 @@ import Foundation
 protocol MealListViewModel: ObservableObject {
     var meals: [Meal] { get }
     
-    func fetchMealList()
+    func fetchMealList() async
 }
 
 final class DefaultMealListViewModel: MealListViewModel {
@@ -24,9 +24,11 @@ final class DefaultMealListViewModel: MealListViewModel {
     }
     
     @MainActor
-    func fetchMealList() {
-        Task {
+    func fetchMealList() async {
+        do {
             meals = try await useCase.fetchMealList(firstLetter: "a")
+        } catch {
+            print(error)
         }
     }
 }
