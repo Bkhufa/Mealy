@@ -15,9 +15,9 @@ protocol AuthUseCase {
 
 struct DefaultAuthUseCase: AuthUseCase {
     
-    private var storage: KeyChainLocalStorage
+    private var storage: LocalStorage
     
-    init(storage: KeyChainLocalStorage) {
+    init(storage: LocalStorage) {
         self.storage = storage
     }
     
