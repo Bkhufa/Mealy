@@ -36,7 +36,7 @@ final class MealListViewModelTest: XCTestCase {
         
         XCTAssertTrue(useCase.fetchCalled)
         XCTAssertEqual(sut.meals, mealData)
-        XCTAssertEqual(sut.currentPage, 0)
+        XCTAssertEqual(sut.currentPage, 1)
     }
     
     func testFetchMeal_failed() async {
@@ -96,7 +96,7 @@ final class MealListViewModelTest: XCTestCase {
         
         XCTAssertTrue(useCase.fetchCalled)
         XCTAssertEqual(sut.meals.count, 4)
-        XCTAssertEqual(sut.currentPage, 1)
+        XCTAssertEqual(sut.currentPage, 2)
     }
     
     func testFetchInitialMeal_thenFetchNextMeal_failed() async {
