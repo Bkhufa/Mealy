@@ -35,6 +35,8 @@
 		E3851F142AFD20B500893C13 /* AuthModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3851F132AFD20B500893C13 /* AuthModel.swift */; };
 		E3E912572AFF378F00234C57 /* FlowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E912562AFF378F00234C57 /* FlowViewModel.swift */; };
 		E3E912592AFF382A00234C57 /* AppFlowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E912582AFF382A00234C57 /* AppFlowView.swift */; };
+		E3E9125E2AFF3D3800234C57 /* AuthViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E9125D2AFF3D3800234C57 /* AuthViewModelTest.swift */; };
+		E3E912612AFF3E9600234C57 /* MockAuthUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E912602AFF3E9600234C57 /* MockAuthUseCase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +87,8 @@
 		E3851F132AFD20B500893C13 /* AuthModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthModel.swift; sourceTree = "<group>"; };
 		E3E912562AFF378F00234C57 /* FlowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowViewModel.swift; sourceTree = "<group>"; };
 		E3E912582AFF382A00234C57 /* AppFlowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFlowView.swift; sourceTree = "<group>"; };
+		E3E9125D2AFF3D3800234C57 /* AuthViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModelTest.swift; sourceTree = "<group>"; };
+		E3E912602AFF3E9600234C57 /* MockAuthUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAuthUseCase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -251,7 +255,9 @@
 		E3851EED2AFD0F0B00893C13 /* MealyTests */ = {
 			isa = PBXGroup;
 			children = (
+				E3E9125F2AFF3DA700234C57 /* Helper */,
 				E3851EEE2AFD0F0B00893C13 /* MealyTests.swift */,
+				E3E9125D2AFF3D3800234C57 /* AuthViewModelTest.swift */,
 			);
 			path = MealyTests;
 			sourceTree = "<group>";
@@ -299,6 +305,14 @@
 				E3851F0D2AFD175D00893C13 /* AuthViewModel.swift */,
 			);
 			path = Authentication;
+			sourceTree = "<group>";
+		};
+		E3E9125F2AFF3DA700234C57 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				E3E912602AFF3E9600234C57 /* MockAuthUseCase.swift */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -466,7 +480,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3E9125E2AFF3D3800234C57 /* AuthViewModelTest.swift in Sources */,
 				E3851EEF2AFD0F0B00893C13 /* MealyTests.swift in Sources */,
+				E3E912612AFF3E9600234C57 /* MockAuthUseCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
