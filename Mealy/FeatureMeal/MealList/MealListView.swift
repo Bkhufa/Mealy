@@ -9,7 +9,7 @@ import SwiftUI
 
 struct MealListView<ViewModel>: View where ViewModel: MealListViewModel {
     
-    @ObservedObject var viewModel: ViewModel
+    @StateObject var viewModel: ViewModel
     @EnvironmentObject var flowViewModel: FlowViewModel
 
     private let imageSize = CGSize(width: UIScreen.main.bounds.width * 0.95, height: UIScreen.main.bounds.width)

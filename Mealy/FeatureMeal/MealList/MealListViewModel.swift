@@ -68,18 +68,19 @@ final class DefaultMealListViewModel: MealListViewModel {
     
     @MainActor
     func fetchMealList() async {
-        currentPage = 0
+        currentPage = 1
         meals = await getMealList(firstLetter: "a")
     }
     
     @MainActor
     func fetchNextMealList() async {
         if currentPage <= 26 {
-            currentPage += 1
             let startingValue = Int(("a" as UnicodeScalar).value)
             guard let nextUnicode = UnicodeScalar(currentPage + startingValue) else { return }
             let nextFirstLetter = String(nextUnicode)
             let nextMeals = await getMealList(firstLetter: nextFirstLetter)
+            guard !nextMeals.isEmpty else { return }
+            currentPage += 1
             meals += nextMeals
         }
     }

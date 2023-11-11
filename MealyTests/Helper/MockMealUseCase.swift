@@ -14,7 +14,7 @@ final class MockMealUseCase: MealUseCase {
     var fetchCalled = false
     var mockData: [Meal] = []
     
-    func fetchMealList(firstLetter: String) async throws -> [Meal] {
+    func fetchMealList(firstLetter: String) async throws -> [Meal]? {
         fetchCalled = true
         if shouldFail {
             throw MockError.mockError

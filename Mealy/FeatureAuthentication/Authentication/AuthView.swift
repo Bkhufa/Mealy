@@ -9,7 +9,7 @@ import SwiftUI
 
 struct AuthView<ViewModel>: View where ViewModel: AuthViewModel {
     
-    @ObservedObject var viewModel: ViewModel
+    @StateObject var viewModel: ViewModel
     @EnvironmentObject var flowViewModel: FlowViewModel
     
     var body: some View {
