@@ -1,5 +1,4 @@
 # Overview
-
 Mealy is an iOS App that lets user see list of meals from [themealdb](https://www.themealdb.com/). 
 User can zoom, pan, and double tap the image on the list, and also see the meal instructions in more detail.
 The fetching are paginated with each meals first name, starting from a to z. The fetching are only done after user scrolled to the bottom of the list.
@@ -8,7 +7,7 @@ Users are required to sign up by registering a username and password, and then l
 The credentials are saved locally inside Apple's KeyChain.
 
 # Architecture
-![image](https://github.com/Bkhufa/Mealy/assets/47885514/b0938616-5e3a-4db0-a517-30affc077b03)
+![image](https://github.com/Bkhufa/Mealy/assets/47885514/414013ed-3aa7-41b7-b2e2-52f87ebaa3e5)
 The overall app architecture is MVVM with some separation on the domain layer using UseCase. 
 UseCase is the inner most layer where the core functionality of the app resides. 
 I used Dependency Inversion to abstract the dependency of the usecase with NetworkService and LocalStorage.
@@ -31,7 +30,7 @@ This architecture is chosen to have a good separation of concern and better read
 
 # Demo
 <div style="display:flex;flex-direction:row">
-    <img src="https://github.com/Bkhufa/Mealy/assets/47885514/6792d106-11f7-4f39-a9d2-a4ae17575839" height="410" width="200" />
-    <img src="https://github.com/Bkhufa/Mealy/assets/47885514/7e66275a-25e0-4745-b613-386a29091e81" height="410" width="200" />
-    <img src="https://github.com/Bkhufa/Mealy/assets/47885514/6ebc6bb7-9425-4335-8aeb-aa1910abd85e" height="410" width="200" />
+    <img src="https://github.com/Bkhufa/Mealy/assets/47885514/942422a0-b85c-4035-b8af-0aac9c25dea1" height="410" width="200" />
+    <img src="https://github.com/Bkhufa/Mealy/assets/47885514/9bc0b980-17e3-4d05-a895-5d227cc9580c" height="410" width="200" />
+    <img src="https://github.com/Bkhufa/Mealy/assets/47885514/f7d6eb25-9f47-4fc8-9c0e-230c67d1c533" height="410" width="200" />
 </div>
