@@ -33,6 +33,8 @@
 		E3851F102AFD1D6C00893C13 /* AuthUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3851F0F2AFD1D6C00893C13 /* AuthUseCase.swift */; };
 		E3851F122AFD1F1500893C13 /* LocalStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3851F112AFD1F1500893C13 /* LocalStorage.swift */; };
 		E3851F142AFD20B500893C13 /* AuthModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3851F132AFD20B500893C13 /* AuthModel.swift */; };
+		E3E912572AFF378F00234C57 /* FlowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E912562AFF378F00234C57 /* FlowViewModel.swift */; };
+		E3E912592AFF382A00234C57 /* AppFlowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E912582AFF382A00234C57 /* AppFlowView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +83,8 @@
 		E3851F0F2AFD1D6C00893C13 /* AuthUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthUseCase.swift; sourceTree = "<group>"; };
 		E3851F112AFD1F1500893C13 /* LocalStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorage.swift; sourceTree = "<group>"; };
 		E3851F132AFD20B500893C13 /* AuthModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthModel.swift; sourceTree = "<group>"; };
+		E3E912562AFF378F00234C57 /* FlowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowViewModel.swift; sourceTree = "<group>"; };
+		E3E912582AFF382A00234C57 /* AppFlowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFlowView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,6 +183,7 @@
 		E34653D52AFD2EB200C4AC3C /* Infrastructure */ = {
 			isa = PBXGroup;
 			children = (
+				E3E912552AFF377400234C57 /* Navigation */,
 				E30912622AFE917900019437 /* NetworkService */,
 				E34653D62AFD2EB900C4AC3C /* LocalStorage */,
 			);
@@ -293,6 +298,15 @@
 				E34653D42AFD2EA700C4AC3C /* Domain */,
 			);
 			path = Authentication;
+			sourceTree = "<group>";
+		};
+		E3E912552AFF377400234C57 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				E3E912562AFF378F00234C57 /* FlowViewModel.swift */,
+				E3E912582AFF382A00234C57 /* AppFlowView.swift */,
+			);
+			path = Navigation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -431,11 +445,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3E912592AFF382A00234C57 /* AppFlowView.swift in Sources */,
 				E30912762AFEBA7000019437 /* MealDetailView.swift in Sources */,
 				E30912662AFE920E00019437 /* Endpoint.swift in Sources */,
 				E3851F0E2AFD175D00893C13 /* AuthViewModel.swift in Sources */,
 				E30912782AFEBAE900019437 /* MealImage.swift in Sources */,
 				E34653D32AFD289600C4AC3C /* KeychainLocalStorage.swift in Sources */,
+				E3E912572AFF378F00234C57 /* FlowViewModel.swift in Sources */,
 				E309126F2AFE9A7900019437 /* MealListView.swift in Sources */,
 				E30912722AFEA63C00019437 /* PanZoomImage.swift in Sources */,
 				E3851F0C2AFD119300893C13 /* AuthView.swift in Sources */,

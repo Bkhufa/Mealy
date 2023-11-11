@@ -9,14 +9,13 @@ import SwiftUI
 
 @main
 struct MealyApp: App {
-    @State var isLoggedIn: Bool = true
+    
+    @StateObject var userStateViewModel = FlowViewModel()
+
     var body: some Scene {
         WindowGroup {
-            if isLoggedIn {
-                MealListView(viewModel: DefaultMealListViewModel(useCase: DefaultMealUseCase(service: AlamofireNetworkService())))
-            } else {
-                AuthView(viewModel: DefaultAuthViewModel(authType: .register, useCase: DefaultAuthUseCase(storage: KeyChainLocalStorage()), isLoggedIn: isLoggedIn))
-            }
+            AppFlowView()
+                .environmentObject(userStateViewModel)
         }
     }
 }
